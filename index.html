@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bariadi Registration Portal</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="overlay"></div>
+
+        <div class="header-content">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+
+            <h1>BARIADI MKOBA REGISTRATION PORTAL</h1>
+
+            <p>
+                Please complete all required information carefully.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Progress -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registrationForm">
+
+            <!-- SECTION A -->
+            <section class="form-section">
+                <h2>Personal Information</h2>
+
+                <div class="grid">
+
+                    <div class="input-group">
+                        <label>Full Name *</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Gender *</label>
+
+                        <select required>
+                            <option value="">Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Marital Status</label>
+
+                        <select>
+                            <option value="">Select Status</option>
+                            <option>Single</option>
+                            <option>Married</option>
+                            <option>Divorced</option>
+                            <option>Widowed</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Nationality</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Occupation</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address *</label>
+                        <input type="email" required>
+                    </div>
+
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Physical Address</label>
+                    <textarea rows="4"></textarea>
+                </div>
+            </section>
+
+            <!-- PROFILE PHOTO -->
+            <section class="form-section">
+                <h2>Profile Picture</h2>
+
+                <div class="photo-upload">
+
+                    <img
+                        src="https://via.placeholder.com/150"
+                        id="photoPreview"
+                        class="photo-preview"
+                        alt="Preview"
+                    >
+
+                    <input
+                        type="file"
+                        id="profilePhoto"
+                        accept="image/*"
+                    >
+                </div>
+            </section>
+
+            <!-- FAMILY INFORMATION -->
+            <section class="form-section">
+                <h2>Family Information</h2>
+
+                <div class="grid">
+
+                    <div class="input-group">
+                        <label>Spouse Name</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Number of Children</label>
+                        <input type="number" min="0">
+                    </div>
+
+                </div>
+
+                <!-- Dynamic Family Members -->
+                <div id="familyMembersContainer">
+
+                </div>
+
+                <button
+                    type="button"
+                    id="addFamilyBtn"
+                    class="add-btn"
+                >
+                    + Add Family Member
+                </button>
+            </section>
+
+            <!-- EMERGENCY CONTACT -->
+            <section class="form-section">
+                <h2>Emergency Contact</h2>
+
+                <div class="grid">
+
+                    <div class="input-group">
+                        <label>Emergency Contact Name</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Relationship</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel">
+                    </div>
+
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Address</label>
+                    <textarea rows="3"></textarea>
+                </div>
+            </section>
+
+            <!-- GROUP PARTICIPATION -->
+            <section class="form-section">
+                <h2>Group Participation</h2>
+
+                <div class="input-group full-width">
+                    <label>
+                        Why do you want to join this community group?
+                    </label>
+
+                    <textarea rows="5"></textarea>
+                </div>
+
+                <div class="skills">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Leadership
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Counseling
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Teaching
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Financial Support
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Volunteering
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Event Organization
+                    </label>
+                </div>
+            </section>
+
+            <!-- DECLARATION -->
+            <section class="form-section">
+
+                <h2>Declaration</h2>
+
+                <label class="checkbox declaration">
+                    <input type="checkbox" required>
+
+                    I confirm that all information provided is correct.
+                </label>
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration
+                </button>
+
+            </section>
+
+        </form>
+
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
